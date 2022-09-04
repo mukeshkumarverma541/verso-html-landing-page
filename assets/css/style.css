@@ -89,13 +89,13 @@ ul li {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(/assets/images/check-yellow.svg);
+  background-image: url(../images/check-yellow.svg);
   background-size: contain;
   width: 18px;
   height: 18px;
 }
 .list-item.blue li::before {
-  background-image: url(/assets/images/check-blue.svg);
+  background-image: url(../images/check-blue.svg);
 }
 
 .line {
@@ -201,7 +201,7 @@ header .wrap {
 .hero h1 span::before {
   content: "";
   position: absolute;
-  background-image: url(/assets/images/sketch.svg);
+  background-image: url(../images/sketch.svg);
   background-size: contain;
   width: 182px;
   height: 22px;
