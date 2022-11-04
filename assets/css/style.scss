@@ -545,6 +545,139 @@ footer {
     }
 }
 
+.wait-list {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    .tagline {
+        color: #000000;
+        font-size: 1.4rem;
+        line-height: 2.0rem;
+        font-family: "Poppins", sans-serif;
+    }
+    h1 {
+        color: #101828;
+        font-size: 4.4rem;
+        line-height: 5.4rem;
+        font-weight: 800;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url(/assets/images/sketch-small.svg);
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+            right: -10px;
+            top: -3rem;
+        }
+    }
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+    p,
+    ul li {
+        color: #667085;
+        font-size: 1.8rem;
+        line-height: 3.2rem;
+        font-weight: 400;
+    }
+    ul li {
+        margin-bottom: 0px;
+    }
+    .text-block {
+        max-width: 45.6rem;
+    }
+    .form-wrap {
+        background: #F5F5F5;
+        padding: 3rem;
+        border-radius: 1.4rem;
+        max-width: 54rem;
+        margin-left: auto;
+    }
+    .form-group {
+        margin-bottom: 2rem;
+        label {
+            color: #344054;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+    }
+    .form-control {
+        background: #FFFFFF;
+        border: 1px solid #BDE0C1;
+        border-radius: 8px;
+        padding: 16px 10px;
+        color: #000000;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    button {
+        width: 100%;
+        padding: 19px;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    .input-group-prepend {
+        .input-group-text {
+            background-color: #fff;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-color: #BDE0C1;
+        }
+        select {
+            border: 0;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .input-group {
+        input {
+            border-left: 0;
+        }
+    }
+}
+
+.modal {
+    .modal-content {
+        background: #FFFFFF;
+        border-radius: 20px;
+        border: 0;
+        padding: 2rem;
+        text-align: center;
+        max-width: 45rem;
+        h3 {
+            color: #101828;
+            font-size: 2.2rem;
+            line-height: 3.2rem;
+            font-weight: 700;
+        }
+        h4 {
+            color: #101828;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        p {
+            font-size: 2.0rem;
+            color: #667085;
+            line-height: 3.4rem;
+        }
+    }
+    button {
+        width: 100%;
+        font-size: 1.6rem;
+        padding: 1.8rem;
+        margin: 2rem auto 0;
+    }
+    .close-modal {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+    }
+}
+
 @media (max-width: 991px) {
     .download-app {
         .img-wrap {

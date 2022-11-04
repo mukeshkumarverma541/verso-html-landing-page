@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Verso Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="wrap">
+                        <div class="logo-text">
+                            <a href="index.html">
+                                <img src="assets/images/verso-logo.png" class="img-fluid" alt="Verso">
+                            </a>
+                        </div>
+                        <!-- VERSO -->
+                        <div class="right">
+                            <a href="#" class="nav-link">Contact Us</a>
+                            <a href="join-waiting-list.html" class="btn btn-primary">Join waiting list</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="wait-list">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3 class="tagline" data-bs-toggle="modal" data-bs-target="#confirmationModal">Lets write your future together.</h3>
+                    <div data-bs-toggle="modal" data-bs-target="#waitingListModal">
+                        <h1>Join the verso waiting list</h1>
+                        <img src="assets/images/line-sketch.svg" class="img-fluid">
+                    </div>
+                    <div class="text-block mt-5">
+                        <p>Once you are in, you can start moving up the waiting list. It's very simple. </p>
+                        <ul>
+                            <li>Share with your friends and family. </li>
+                            <li>Earn points.</li>
+                            <li>Move up the list. See you soon</li>
+                        </ul>
+                        <p>If you have any question send us an email at <strong><a href="mailto:contact@verso.com">contact@verso.com</a></strong></p>
+                        <img src="assets/images/illustration.svg" class="img-fluid mt-4">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-wrap">
+                        <form>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <select class="form-control">
+                                                <option>+241</option> 
+                                            </select>
+                                            <img src="assets/images/arrow-down.svg" class="img-fluid icon">
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="form-group mb-0">
+                                <button type="btn" type="button" class="btn btn-primary">Add me to the list</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="root"></div>
+
+
+    <footer>
+        <div class="container">
+            <div class="row wow fadeInTop" data-wow-delay="0.1s">
+                <div class="col">
+                    <div class="logo-text white">VERSO</div>
+                    <p class="copyright">© 2022 Verso app. All rights reserved</p>
+                </div>
+                <div class="col">
+                    <div class="widget">
+                        <a href="#" class="nav-link">Contact us</a>
+                        <div class="social-links">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+
+                            </ul>
+                        </div>
+                        <a href="" class="btn btn-primary">Join waiting list</a>
+                        <div class="elfsight-app-31a496fe-ea3c-4ccb-b201-4c24831ae1c3"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="waitingListModal" tabindex="-1" aria-labelledby="waitingListModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/images/close-modal.svg" class="img-fluid close-modal" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="assets/images/message.svg" class="img-fluid my-5">
+                    <h3>Hi, John</h3>
+                    <h3>Check your emails to access your confirmation number</h3>
+                    <button type="button" class="btn btn-primary">Add me</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/images/close-modal.svg" class="img-fluid close-modal" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="assets/images/thanks.svg" class="img-fluid my-5">
+                    <h4 class="mb-4">Thank You!</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+                    <button type="button" class="btn btn-primary" id="okayBtn">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <script src="confetti.js"></script>
+    <script>
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000);
+            clearInterval(() => {
+                confetti.stop()
+            }, 5000)
+        };
+    </script>
+    <script>
+        const btn = document.getElementById('okayBtn');
+        btn.addEventListener('click', start)
+    </script>
+</body>
+
+</html>
