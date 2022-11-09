@@ -95,11 +95,15 @@ ul li {
 .list-item li {
   position: relative;
   padding-left: 3rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #666666;
 }
 .list-item li::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 4px;
   left: 0;
   background-image: url(../images/check-yellow.svg);
   background-size: contain;
@@ -549,12 +553,26 @@ footer .social-links ul li a {
 .wait-list h1::before {
   content: "";
   position: absolute;
-  background-image: url(/assets/images/sketch-small.svg);
+  background-image: url(../images/sketch-small.svg);
   width: 100px;
   height: 100px;
   background-repeat: no-repeat;
   right: -10px;
   top: -3rem;
+}
+.wait-list h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  margin-bottom: 14px;
+}
+.wait-list h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.wait-list .email {
+  font-weight: 600;
 }
 .wait-list a {
   color: #000000;
@@ -563,15 +581,17 @@ footer .social-links ul li a {
 .wait-list p,
 .wait-list ul li {
   color: #667085;
-  font-size: 1.8rem;
-  line-height: 3.2rem;
+  font-size: 17px;
   font-weight: 400;
 }
 .wait-list ul li {
   margin-bottom: 0px;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  font-weight: 400;
 }
 .wait-list .text-block {
-  max-width: 45.6rem;
+  max-width: 53rem;
 }
 .wait-list .form-wrap {
   background: #F5F5F5;
@@ -629,19 +649,20 @@ footer .social-links ul li a {
 }
 .modal .modal-content h3 {
   color: #101828;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: 700;
 }
 .modal .modal-content h4 {
   color: #101828;
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 3rem;
+  font-weight: 600;
 }
 .modal .modal-content p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #667085;
-  line-height: 3.4rem;
+  line-height: 3.2rem;
 }
 .modal button {
   width: 100%;
@@ -709,9 +730,28 @@ section.s2 .img-wrap {
   html {
     font-size: 57.5%;
   }
+  .wait-list h1::before {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   html {
     font-size: 53.5%;
+  }
+}
+@media (max-width: 1400px) {
+  .wait-list h1 {
+    font-size: 4rem;
+  }
+  .wait-list h1::before {
+    right: -4.2rem;
+  }
+}
+@media (max-width: 1200px) {
+  .wait-list h1 {
+    font-size: 3.4rem;
+  }
+  .wait-list h1::before {
+    right: -5.2rem;
   }
 }/*# sourceMappingURL=style.css.map */
