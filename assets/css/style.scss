@@ -595,7 +595,7 @@ footer {
     }
     p,
     ul li {
-        color: #667085;
+        // color: #667085;
         font-size: 17px;
         font-weight: 400;
     }
@@ -718,17 +718,35 @@ footer {
 }
 
 @media (max-width:767px) {
+    .row {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
     header {
         .btn {
             margin-left: 1rem;
         }
     }
     .hero {
+        .tagline {
+            font-size: 1.8rem;
+        }
         img {
             margin-bottom: 4rem;
         }
-        h1 span::before {
-            display: none;
+        h1 {
+            padding-bottom: 1rem;
+            letter-spacing: 0px;
+            br {
+                display: none;
+            }
+            span {
+                display: block;
+                min-height: 54px;
+                &::before {
+                    display: none;
+                }
+            }
         }
     }
     .review .left .wrap {
@@ -746,13 +764,24 @@ footer {
             }
         }
     }
-    section.s1,
+    section.s1 {
+        padding-bottom: 5rem;
+        .img-wrap {
+            margin-bottom: 7rem;
+        }
+    }
     section.s2 {
+        padding-top: 5rem;
+        padding-bottom: 0;
         .img-wrap {
             margin-bottom: 7rem;
         }
     }
     .features {
+        .box {
+            max-width: 100%;
+        }
+        padding-bottom: 4rem;
         .subheading-2 {
             margin-bottom: 3rem;
         }
@@ -763,6 +792,42 @@ footer {
     }
     .download-app .img-wrap {
         display: none;
+    }
+    .cta {
+        margin-top: 10rem;
+        margin-bottom: 0;
+        .bg {
+            border-radius: 0;
+        }
+    }
+    .pay-bills .box .heading {
+        font-size: 3.4rem;
+        line-height: 4.8rem;
+    }
+    .wait-list {
+        ul li {
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+        .graphics {
+            display: block;
+            margin: 5rem auto !important;
+        }
+        .see-soon {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .d-sm-none {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .d-sm-block {
+        display: block !important;
     }
 }
 
