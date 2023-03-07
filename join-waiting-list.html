@@ -2,16 +2,28 @@
 <html>
 
 <head>
-    <title>Verso Landing Page</title>
+    <title>Join wait list</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        label.error {
+            color: red !important;
+            font-size: 12px !important;
+            display: block;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .form-group.phone label.error {
+            bottom: -30px;
+        }
+    </style>
 </head>
-
-<body>
+<div class="home">
     <header>
         <div class="container">
             <div class="row align-items-center">
@@ -19,7 +31,7 @@
                     <div class="wrap">
                         <div class="logo-text">
                             <a href="index.html">
-                                <img src="assets/images/verso-logo.png" class="img-fluid" alt="Verso">
+                                <img src="assets/images/verso-logo.png" class="img-fluid" alt="Verso" />
                             </a>
                         </div>
                         <!-- VERSO -->
@@ -34,164 +46,302 @@
     </header>
     <section class="wait-list">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row">
                 <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.1s">
                     <h3 class="tagline">Lets write your future together.</h3>
                     <div>
                         <h1>Join the verso waiting list</h1>
-                        <img src="assets/images/line-sketch.svg" class="img-fluid">
+                        <img src="assets/images/line-sketch.svg" class="img-fluid" />
                     </div>
                     <div class="text-block mt-5">
-                        <h3>Once you are in, you can start moving up the waiting list and get the chance to win CFA 100k and other gifts.</h3>
+                        <h3> Once you are in, you can start moving up the waiting list and get the chance to win CFA 100k and other gifts. </h3>
                         <p>Its very simple:</p>
                         <ul>
-                            <li>Share with your friends and family. </li>
+                            <li>Share with your friends and family.</li>
                             <li>Earn points.</li>
-                            <li>Move up the list. </li>
+                            <li>Move up the list.</li>
                             <li>Win your gift</li>
                         </ul>
                         <p class="see-soon">See you soon!</p>
-                        <p class="mb-0">If you have any question send us an email at </p>
-                        <p class="email"><a href="mailto:contact@verso.com">contact@verso.com</a></p>
-                        <img src="assets/images/illustration.svg" class="img-fluid mt-4 graphics">
+                        <p class="mb-0"> If you have any question send us an email at <span class="email">
+                  <a href="mailto:contact@verso.com">contact@verso.com</a>
+                </span>
+                        </p>
+                        <img src="assets/images/illustration.svg" class="img-fluid mt-4 graphics" />
                     </div>
                 </div>
-                <div class="col-md-6  wow fadeInRight" data-wow-delay="0.1s">
+                <div class="col-md-6 wow fadeInRight" data-wow-delay="0.1s">
                     <div class="form-wrap">
-                        <form>
+                        <form id="waitListForm">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" name="name" required />
+                                <div class="err-text"></div>
                             </div>
                             <div class="form-group">
                                 <label>Age</label>
-                                <input type="number" class="form-control">
+                                <input type="text" class="form-control" name="age" required />
+                                <div class="err-text"></div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group phone">
                                 <label>Phone Number</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <select class="form-control">
-                                                <option>+241</option> 
-                                            </select>
-                                            <img src="assets/images/arrow-down.svg" class="img-fluid icon">
+                                        <div class="input-group-text" style="padding: 0;">
+                                            <select class="form-control" disabled>
+                          <option>+241</option>
+                        </select>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control">
+                                    <input type="number" class="form-control" name="phone" onkeypress="if(this.value.length==10) return false;" required />
                                 </div>
+                                <div class="err-text"></div>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control">
+                                <input type="email" class="form-control" name="email" required />
+                                <div class="err-text"></div>
                             </div>
-                            <div class="form-group mb-0">
-                                <button type="btn" type="button" class="btn btn-primary">Add me to the list</button>
+                            <div class="form-group">
+                                <label>Referral Code</label>
+                                <input type="text" class="form-control" name="referralCode" />
+                                <div class="err-text"></div>
+                            </div>
+                            <div class="form-group mb-0 pb-0">
+                                <button type="submit" class="btn btn-primary" id="waitListFormSubmit"> Add me to the list </button>
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <p data-bs-toggle="modal" data-bs-target="#waitingListModal">Popup Demo 1</p>
-                <p data-bs-toggle="modal" data-bs-target="#confirmationModal" id="confetti">Popup Demo 2</p>
-            </div>
-        </div>
-    </div>
-    <div id="root"></div>
-
-
     <footer>
         <div class="container">
             <div class="row wow fadeInTop" data-wow-delay="0.1s">
                 <div class="col">
                     <div class="logo-text white">VERSO</div>
-                    <p class="copyright">© 2022 Verso app. All rights reserved</p>
+                    <p class="copyright">&copy; <span id="currentYear"></span> . All rights reserved.</p>
                 </div>
                 <div class="col">
-                    <div class="widget">
+                    <div class="widget1">
                         <a href="#" class="nav-link">Contact us</a>
                         <div class="social-links">
                             <ul>
-                                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-tiktok"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        <a href="" class="btn btn-primary">Join waiting list</a>
+                        <a href="join-waiting-list.html" class="btn btn-primary">Join waiting list</a>
                         <div class="elfsight-app-31a496fe-ea3c-4ccb-b201-4c24831ae1c3"></div>
-
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Modal -->
-    <div class="modal fade" id="waitingListModal" tabindex="-1" aria-labelledby="waitingListModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="assets/images/close-modal.svg" class="img-fluid close-modal" data-bs-dismiss="modal" aria-label="Close">
-                    <img src="assets/images/message.svg" class="img-fluid my-5">
-                    <h3>Hi, John</h3>
-                    <h4>Check your emails to access your confirmation number</h4>
-                    <button type="button" class="btn btn-primary">Add me</button>
-                </div>
+</div>
+<!-- alert Modal -->
+<div class="modal fade" id="waitingListModal" tabindex="-1" aria-labelledby="waitingListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="assets/images/close-modal.svg" class="img-fluid close-modal" data-bs-dismiss="modal" aria-label="Close" />
+                <img src="assets/images/message.png" class="img-fluid my-5" style="max-width: 180px" />
+                <h3 id="userName">Hi, John</h3>
+                <h4 style="max-width: 353px"> Check your emails to access your referral code </h4>
+                <!--  data-bs-toggle="modal"
+          data-bs-target="#confirmationModal" -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmationModal" data-bs-dismiss="modal" aria-label="Close"> Add me </button>
             </div>
         </div>
     </div>
+</div>
 
-
-    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="assets/images/close-modal.svg" class="img-fluid close-modal" data-bs-dismiss="modal" aria-label="Close">
-                    <img src="assets/images/thanks.svg" class="img-fluid my-5">
-                    <h3 class="mb-4">Thank You!</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
-                    <button type="button" class="btn btn-primary">Okay</button>
-                </div>
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="assets/images/close-modal.svg" class="img-fluid close-modal" data-bs-dismiss="modal" aria-label="Close" />
+                <img src="assets/images/thanks.png" class="img-fluid my-5" style="max-width: 220px" />
+                <h3>Thank You!</h3>
+                <p>Welcome to VERSO</p>
+                <button type="button" class="btn btn-primary" id="confetti" data-bs-dismiss="modal" aria-label="Close"> Okay </button>
             </div>
         </div>
     </div>
+</div>
+<!-- Referal code Error Modal -->
+<div class="modal fade" id="referalCodeErrorModal" tabindex="-1" aria-labelledby="referalCodeErrorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="assets/images/close-modal.svg" class="img-fluid close-modal" data-bs-dismiss="modal" aria-label="Close" />
+                <img src="assets/images/failed.gif" class="img-fluid" style="max-width: 15rem;">
+                <h2 class="text-danger">Oops!</h2>
+                <h4 style="max-width: 353px"> Invalid Referral Code. </h4>
+                <!--  data-bs-toggle="modal"
+          data-bs-target="#confirmationModal" -->
+                <!-- <button type="button" class="btn btn-primary" (click)="Close()">
+          Add me
+        </button> -->
+            </div>
+        </div>
+    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-    <script src="confetti.js"></script>
-    <script>
-        new WOW({
-            mobile: false
-        }).init();
-        const start = () => {
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<script src="confetti.js"></script>
+<script>
+    jQuery(function($) {
+        function formatErrorMessage(jqXHR, exception) {
+            var message = '';
+            var r = jQuery.parseJSON(jqXHR.responseText);
+            message = r.response;
+            return message;
+        }
+
+        $(document).ready(function() {
+            $('#waitListForm').validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 3,
+                    },
+                    age: {
+                        required: true,
+                        digits: true,
+                        minlength: 1,
+                        maxlength: 3,
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    phone: {
+                        required: true,
+                        digits: true,
+                        minlength: 10,
+                        maxlength: 10,
+                    },
+                    referralCode: {
+                        minlength: 8,
+                        maxlength: 8,
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "Please enter name",
+                        minlength: "Please enter atleast 3 minimum characters.",
+                    },
+                    age: {
+                        required: "Please enter age",
+                        digits: "Please enter valid age",
+                        minlength: "Please enter valid age",
+                        maxlength: "Please enter valid age",
+                    },
+                    phone: {
+                        required: "Please enter phone number",
+                        digits: "Please enter valid phone number",
+                        minlength: "Phone number field accept only 10 digits",
+                        maxlength: "Phone number field accept only 10 digits",
+                    },
+                    email: {
+                        required: "Please enter email address",
+                        email: "Please enter a valid email address.",
+                    },
+                    referralCode: {
+                        minlength: "Invalid Referral code.",
+                        maxlength: "Invalid Referral code.",
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    error.insertAfter(element);
+                },
+                submitHandler: function(form) {
+                    const data = $('#waitListForm').serialize();
+
+                    $.ajax({
+                        url: 'https://api.monverso.com/api/user/registration',
+                        // url: 'http://139.59.40.62:8095/api/user/registration',
+                        dataType: 'json',
+                        type: 'POST',
+                        data: $('#waitListForm').serialize(),
+                        beforeSend: function() {
+                            $('#waitListFormSubmit').attr('diabled', true)
+                        },
+                        error: function(jqXHR, exception) {
+                            $('#waitListFormSubmit').attr('diabled', false);
+                            var msg = formatErrorMessage(jqXHR, exception);
+                            alert(msg);
+                        },
+                        success: function(data) {
+                            $("#userName").html('Hi, ' + $('[name="name"]').val());
+                            $('#waitListFormSubmit').attr('disabled', false);
+                            $('#waitListForm').trigger("reset");
+
+                            $('#waitingListModal').modal('show');
+
+                        }
+                    })
+                }
+            })
+        })
+    })
+</script>
+<script>
+    new WOW({
+        mobile: false
+    }).init();
+    const start = () => {
+        setTimeout(() => {
+            confetti.start()
+        }, 1000);
+        if (start) {
             setTimeout(() => {
-                confetti.start()
-            }, 1000);
-            if (start) {
-                setTimeout(() => {
-                    confetti.stop();
-                }, 5000)
-            }
-        };
-    </script>
-    <script>
-        const btn = document.getElementById('confetti');
-        btn.addEventListener('click', start);
-    </script>
+                confetti.stop();
+            }, 5000)
+        }
+    };
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const currentYear = new Date().getFullYear();
+        const yearElement = document.getElementById("currentYear");
+        yearElement.textContent = currentYear;
+    });
+
+    const btn = document.getElementById('confetti');
+    btn.addEventListener('click', start);
+</script>
 </body>
 
 </html>
